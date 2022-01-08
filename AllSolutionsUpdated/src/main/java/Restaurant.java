@@ -33,8 +33,8 @@ public class Restaurant {
 
     public List<Item> getMenu() {
                 //CORRECT CODE WRITTEN BELOW
-        return Collections
-                .unmodifiableList(menu);
+        //return Collections.unmodifiableList(menu);
+        return menu;
 
     }
 
@@ -70,6 +70,17 @@ public class Restaurant {
 
     public String getName() {
         return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public LocalTime getOpeningTime() {
+        return openingTime;
+    }
+    public LocalTime getClosingTime() {
+        return closingTime;
     }
 
     public int calculateOrderTotal(LinkedList<String> selectedItems){

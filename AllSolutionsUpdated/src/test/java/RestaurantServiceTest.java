@@ -1,8 +1,22 @@
 import org.junit.jupiter.api.*;
 
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.time.LocalTime;
 
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
+import static org.hamcrest.collection.IsIterableContainingInAnyOrder.containsInAnyOrder;
+import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
+
+
+
+
 
 
 class RestaurantServiceTest {
@@ -25,6 +39,10 @@ class RestaurantServiceTest {
         //WRITE UNIT TEST CASE HERE
 
         assertEquals(restaurant.getName(), service.findRestaurantByName("Amelie's cafe").getName());
+        assertEquals(restaurant.getLocation(), service.findRestaurantByName("Amelie's cafe").getLocation());
+        assertEquals(restaurant.getOpeningTime(), service.findRestaurantByName("Amelie's cafe").getOpeningTime());
+        assertEquals(restaurant.getClosingTime(), service.findRestaurantByName("Amelie's cafe").getClosingTime());
+        assertEquals(restaurant.getMenu().get(0),(service.findRestaurantByName("Amelie's cafe").getMenu().get(0)));
     }
 
     //You may watch the video by Muthukumaran on how to write exceptions in Course 3: Testing and Version control: Optional content
